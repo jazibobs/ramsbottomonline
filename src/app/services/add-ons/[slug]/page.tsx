@@ -15,9 +15,9 @@ export async function generateStaticParams() {
 export default async function ServicePage({
   params
 }: {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }) {
-  const { slug } = params
+  const { slug } = await params
   
   try {
     // Get the service data
