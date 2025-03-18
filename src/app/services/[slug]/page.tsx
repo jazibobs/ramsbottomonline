@@ -7,19 +7,22 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
 import AddOns from '@/components/AddOns';
-import { GetStaticPropsContext, InferGetStaticPropsType } from 'next';
 
 interface Params {
   slug: string;
 }
 
-export default async function ServiceTemplate({ params }: InferGetStaticPropsType<typeof getStaticProps>) {
-  const { slug } = params as Params;
+interface ServiceProps {
+  params: Params;
+}
+
+export default async function ServiceTemplate({ params }: ServiceProps) {
+  const { slug } = params;
   const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
   const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString()
+  const contentHtml = processedContent.toString();
 
   return (
     <>
@@ -35,35 +38,17 @@ export default async function ServiceTemplate({ params }: InferGetStaticPropsTyp
       <AddOns />
       <Footer />
     </>
-  )
+  );
 }
 
-export async function getStaticProps(context: GetStaticPropsContext) {
-  const { slug } = context.params as Params;
-
-  return {
-    props: {
-      params: { slug },
-    },
-  };
-}
-
-export async function getStaticPaths() {
+export async function generateStaticParams() {
   const serviceDirectory = path.join(process.cwd(), 'content', 'services');
   const filenames = fs.readdirSync(serviceDirectory);
 
-  const paths = filenames.map((filename) => {
+  return filenames.map((filename) => {
     const slug = filename.replace(/\.md$/, '');
-
     return {
-      params: {
-        slug,
-      },
+      slug,
     };
   });
-
-  return {
-    paths,
-    fallback: false,
-  };
 }
