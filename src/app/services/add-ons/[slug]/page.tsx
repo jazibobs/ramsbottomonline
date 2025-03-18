@@ -6,46 +6,18 @@ import html from 'remark-html';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
-import AddOns from '@/components/AddOns';
-import { Metadata } from 'next';
+import Services from '@/components/Services';
 
-interface Params {
-  slug: string;
-}
 
-export async function generateStaticParams() {
-  const serviceDirectory = path.join(process.cwd(), 'content', 'services');
-  const filenames = fs.readdirSync(serviceDirectory);
-
-  return filenames.map((filename) => {
-    const slug = filename.replace(/\.md$/, '');
-    return {
-      slug,
-    };
-  });
-}
-
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const { slug } = params;
-  const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data } = matter(fileContents);
-
-  return {
-    title: data.title,
-    description: data.description,
-  };
-}
-
-export default async function ServiceTemplate({ params }: { params: Params }) {
+export default async function AddOnsTemplate({ params }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
   const processedContent = await remark().use(html).process(content);
-  const contentHtml = processedContent.toString();
+  const contentHtml = processedContent.toString()
 
-  return (
+  return(
     <>
       <Header 
         heading={data.title}
@@ -56,8 +28,8 @@ export default async function ServiceTemplate({ params }: { params: Params }) {
       </div>
 
       <ServiceCta/>
-      <AddOns />
+      <Services />
       <Footer />
     </>
-  );
+  )
 }
