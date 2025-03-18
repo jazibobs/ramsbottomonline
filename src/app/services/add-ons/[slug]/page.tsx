@@ -1,37 +1,44 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
-import { remark } from 'remark';
-import { useRouter } from 'next/router';
-import html from 'remark-html';
+import { getServiceData, getServiceSlugs } from '@/lib/markdown'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
 import Services from '@/components/Services';
+import { notFound } from 'next/navigation';
 
+// Define the static paths for the dynamic route
+export async function generateStaticParams() {
+  const paths = getServiceSlugs()
+  return paths
+}
 
-export default function ServiceTemplate() {
-  const router = useRouter()
-  const slug  = router.query.slug;
-  const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
-  const processedContent = remark().use(html).process(content);
-  const contentHtml = processedContent.toString()
-
-  return(
-    <>
-      <Header 
-        heading={data.title}
-        subHeading={data.description}
-      />
-      <div className="max-w-screen-lg m-auto px-8 py-16">
-        <div className="font-sans prose" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-      </div>
-
-      <ServiceCta/>
-      <Services />
-      <Footer />
-    </>
-  )
+// The page component
+export default async function ServicePage({
+  params
+}: {
+  params: { slug: string }
+}) {
+  const { slug } = params
+  
+  try {
+    // Get the service data
+    const service = await getServiceData(slug)
+    
+    return (
+      <>
+        <Header 
+          heading={service.title}
+          subHeading={service.description}
+        />
+        <div className="max-w-screen-lg m-auto px-8 py-16">
+          <div className="font-sans prose" dangerouslySetInnerHTML={{ __html: service.contentHtml }} />
+        </div>
+        <ServiceCta/>
+        <Services />
+        <Footer />
+      </>
+    )
+  } catch (error: unknown) {
+    console.error("Error loading service:", error);
+    notFound();
+  }
 }
