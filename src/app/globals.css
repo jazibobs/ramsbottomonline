@@ -19,3 +19,10 @@
   background-repeat: no-repeat;
   background-size: 50% auto;
 }
+
+@media screen and (max-width: 64rem) {
+  .vase-hero {
+    background-position: center;
+    background-size: cover;
+  }
+}

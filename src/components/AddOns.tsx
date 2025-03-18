@@ -30,10 +30,10 @@ export default function AddOns() {
           <SectionHeader
             preTitle="Make it better"
             title="Optional extras"
-            context="From simple landing pages to complex web applications, we can help your business thrive online."
+            context="We can turbo-charge your website to support any of these optional add-ons."
           />
         </div>
-        <div className="w-full lg:w-1/2 flex gap-4 justify-end">
+        <div className="hidden w-full lg:w-1/2 lg:flex gap-4 justify-end">
           <button
             className={`bg-teal-700 text-white w-12 h-12 rounded-full font-sans flex items-center justify-center text-2xl hover:scale-110 transition-all hover:bg-slate-900 ${cardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
             onClick={slideLeft}
@@ -57,25 +57,25 @@ export default function AddOns() {
         <ServiceCard 
           text="Analytics" 
           blurb="Ideal for keeping track of how your customers are actually using your website. We can configure and install GDPR-compliant Plausible analytics to keep you informed." 
-          href="/services/analytics" 
+          href="/services/add-ons/analytics" 
           icon="/icons/graph.svg" 
         />
         <ServiceCard 
           text="Email marketing" 
-          blurb="Mailing lists are a great to keep your customers informed about your latest offers. We can help you capture" 
-          href="/services/email-marketing" 
+          blurb="Mailing lists are a great to keep your customers informed about your latest offers. We can help you capture leads to follow up on or create mailing lists for special offers." 
+          href="/services/add-ons/email-marketing" 
           icon="/icons/envelope.svg" 
         />
         <ServiceCard 
           text="CRM integration" 
-          blurb="We can help get your website and CRM communicating effectively." 
-          href="/services/crm-integration" 
+          blurb="We can help get your website and CRM communicating effectively. Make sure that you're always on top of your customer data." 
+          href="/services/add-ons/crm-integration" 
           icon="/icons/users.svg" 
         />
         <ServiceCard 
           text="Search engine optimisation" 
-          blurb="" 
-          href="/services/search-engine-optimisation" 
+          blurb="We can ensure that all part of your website are optimised for the right keywords for your audience." 
+          href="/services/add-ons/search-engine-optimisation" 
           icon="/icons/search.svg" 
         />
       </div>

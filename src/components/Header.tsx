@@ -31,7 +31,10 @@ const Header: FC<HeaderProps> = ({ heading, subHeading, bgClass, hideButton }) =
                 <Link className="inline-block hover:scale-110 transition-transform" href="/services">Services</Link>
               </li>
               <li>
-                <Link className="inline-block hover:scale-110 transition-transform" href="/contact">Contact</Link>
+                <Link className="inline-block hover:scale-110 transition-transform" href="/pricing">Pricing</Link>
+              </li>
+              <li>
+                <Link className="inline-block hover:scale-110 transition-transform" href="/contact-us">Contact Us</Link>
               </li>
               <li>
                 <ButtonLink href="/free-consultation" text="Get started" />

@@ -7,7 +7,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
 import Services from '@/components/Services';
-import AddOns from '@/components/AddOns';
 
 export default async function ServiceTemplate({ params }) {
   const { slug } = params;
@@ -28,7 +27,7 @@ export default async function ServiceTemplate({ params }) {
       </div>
 
       <ServiceCta/>
-      <AddOns />
+      <Services />
       <Footer />
     </>
   )

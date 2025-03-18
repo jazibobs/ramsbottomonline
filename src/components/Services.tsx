@@ -33,7 +33,7 @@ export default function Services() {
             context="From simple landing pages to complex web applications, we can help your business thrive online."
           />
         </div>
-        <div className="w-full lg:w-1/2 flex gap-4 justify-end">
+        <div className="hidden w-full lg:w-1/2 lg:flex gap-4 justify-end">
           <button
             className={`bg-teal-700 text-white w-12 h-12 rounded-full font-sans flex items-center justify-center text-2xl hover:scale-110 transition-all hover:bg-slate-900 ${cardIndex === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
             onClick={slideLeft}

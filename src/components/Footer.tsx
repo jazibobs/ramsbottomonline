@@ -4,22 +4,21 @@ import ButtonLink from "./ui/ButtonLink";
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-gray-100/95  via-slate-200/95 to-slate-200/50">
+    <footer className="bg-gradient-to-r from-gray-100/95  via-slate-200/95 to-slate-200/50 pt-8">
       <div className="m-auto max-w-screen-xl p-8 flex flex-col lg:flex-row gap-8">
         <div className="w-full lg:w-5/12">
           <SiteTitle />
           <p className="text-slate-500 font-sans mt-1 mb-6">Web development services for Ramsbottom.</p>
-          <Link className="block text-xl mb-8 text-teal-700" href="mailto:jared@ramsbottom.online">jared@ramsbottom.online</Link>
+          <Link className="block text-xl mb-8 text-slate-700" href="mailto:jared@ramsbottom.online">jared@ramsbottom.online</Link>
           <ButtonLink href="/free-consultation" text="Book a free consultation" />
         </div>
         <div className="w-full lg:w-2/12">
           <h2 className="text-xl font-sans mb-4 font-semibold">Services</h2>
           <ul className="font-sans text-slate-600">
-            <li><Link href="/services/landing-page">Landing pages</Link></li>
+            <li><Link href="/services/landing-pages">Landing pages</Link></li>
             <li><Link href="/services/static-site-generators">Static site generators</Link></li>
             <li><Link href="/services/wordpress">WordPress websites</Link></li>
-            <li><Link href="/services/woocommerce">WooCommerce stores</Link></li>
-            <li><Link href="/services/shopify">Shopify stores</Link></li>
+            <li><Link href="/services/ecommerce">Online stores</Link></li>
             <li><Link href="/services/web-apps">Web applications</Link></li>
           </ul>
         </div>
