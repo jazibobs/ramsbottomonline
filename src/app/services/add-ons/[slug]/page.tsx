@@ -2,22 +2,21 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { remark } from 'remark';
+import { useRouter } from 'next/router';
 import html from 'remark-html';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
 import Services from '@/components/Services';
 
-interface ServiceParams {
-  slug: FunctionStringCallback
-}
 
-export default async function ServiceTemplate({ params }: { params: ServiceParams }) {
-  const { slug } = params;
+export default function ServiceTemplate() {
+  const router = useRouter()
+  const slug  = router.query.slug;
   const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
-  const processedContent = await remark().use(html).process(content);
+  const processedContent = remark().use(html).process(content);
   const contentHtml = processedContent.toString()
 
   return(
