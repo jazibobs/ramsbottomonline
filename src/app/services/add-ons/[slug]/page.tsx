@@ -8,8 +8,11 @@ import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
 import Services from '@/components/Services';
 
+interface ServiceParams {
+  slug: FunctionStringCallback
+}
 
-export default async function AddOnsTemplate({ params }) {
+export default async function ServiceTemplate({ params }: { params: ServiceParams }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
