@@ -6,17 +6,38 @@ import html from 'remark-html';
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ServiceCta from "@/components/cta/ServiceCta";
-import Services from '@/components/Services';
+import AddOns from '@/components/AddOns';
+import { Metadata } from 'next';
 
 interface Params {
   slug: string;
 }
 
-interface ServiceProps {
-  params: Params;
+export async function generateStaticParams() {
+  const serviceDirectory = path.join(process.cwd(), 'content', 'services');
+  const filenames = fs.readdirSync(serviceDirectory);
+
+  return filenames.map((filename) => {
+    const slug = filename.replace(/\.md$/, '');
+    return {
+      slug,
+    };
+  });
 }
 
-export default async function ServiceTemplate({ params }: ServiceProps) {
+export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
+  const { slug } = params;
+  const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
+  const fileContents = fs.readFileSync(filePath, 'utf8');
+  const { data } = matter(fileContents);
+
+  return {
+    title: data.title,
+    description: data.description,
+  };
+}
+
+export default async function ServiceTemplate({ params }: { params: Params }) {
   const { slug } = params;
   const filePath = path.join(process.cwd(), 'content', 'services', `${slug}.md`);
   const fileContents = fs.readFileSync(filePath, 'utf8');
@@ -35,20 +56,8 @@ export default async function ServiceTemplate({ params }: ServiceProps) {
       </div>
 
       <ServiceCta/>
-      <Services />
+      <AddOns />
       <Footer />
     </>
   );
-}
-
-export async function generateStaticParams() {
-  const serviceDirectory = path.join(process.cwd(), 'content', 'services');
-  const filenames = fs.readdirSync(serviceDirectory);
-
-  return filenames.map((filename) => {
-    const slug = filename.replace(/\.md$/, '');
-    return {
-      slug,
-    };
-  });
 }
