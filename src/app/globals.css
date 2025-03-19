@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html { 
+  height: 100%;
+}
 
 .home .header-content {
   @apply min-h-[600px];
