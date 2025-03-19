@@ -13,8 +13,12 @@ export async function generateStaticParams() {
 }
 
 // Function to generate metadata dynamically
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { slug } = params
+export async function generateMetadata({
+  params
+}: {
+  params:  Promise<{ slug: string }>
+}): Promise<Metadata> {
+  const { slug } = await params
   const service = await getServiceData(slug)
   return {
     title: service.title + " - Ramsbottom Online",
