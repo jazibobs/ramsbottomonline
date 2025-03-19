@@ -11,7 +11,7 @@ interface ServiceCardProps {
 
 const ServiceCard: FC<ServiceCardProps> = ({ href, text, blurb, icon }) => {
   return (
-    <Link href={href} className="bg-white rounded-lg p-4 shadow-lg w-full lg:w-96 h-auto lg:h-80 flex flex-col justify-between flex-shrink-0 hover:scale-110 transition-all">
+    <Link scroll={false} href={href} className="bg-white rounded-lg p-4 shadow-lg w-full lg:w-96 h-auto lg:h-80 flex flex-col justify-between flex-shrink-0 hover:scale-110 transition-all">
       <div>
         <Image src={icon} alt="" width={64} height={64} />
       </div>

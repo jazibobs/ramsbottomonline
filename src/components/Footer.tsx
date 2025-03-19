@@ -15,27 +15,27 @@ export default function Footer() {
         <div className="w-full lg:w-2/12">
           <h2 className="text-xl font-sans mb-4 font-semibold">Services</h2>
           <ul className="font-sans text-slate-600">
-            <li><Link href="/services/landing-pages">Landing pages</Link></li>
-            <li><Link href="/services/static-site-generators">Static site generators</Link></li>
-            <li><Link href="/services/wordpress">WordPress websites</Link></li>
-            <li><Link href="/services/ecommerce">Online stores</Link></li>
-            <li><Link href="/services/web-apps">Web applications</Link></li>
+            <li><Link scroll={false} href="/services/landing-pages">Landing pages</Link></li>
+            <li><Link scroll={false} href="/services/static-site-generators">Static site generators</Link></li>
+            <li><Link scroll={false} href="/services/wordpress">WordPress websites</Link></li>
+            <li><Link scroll={false} href="/services/ecommerce">Online stores</Link></li>
+            <li><Link scroll={false} href="/services/web-apps">Web applications</Link></li>
           </ul>
         </div>
         <div className="w-full lg:w-2/12">
           <h2 className="text-xl font-sans mb-4 font-semibold">Add-ons</h2>
           <ul className="font-sans text-slate-600">
-            <li><Link href="/services/analytics">Analytics</Link></li>
-            <li><Link href="/services/email-marketing">Email marketing</Link></li>
-            <li><Link href="/services/crm-integration">CRM integration</Link></li>
-            <li><Link href="/services/crm-integration">Search engine optimisation</Link></li>
+            <li><Link scroll={false} href="/services/analytics">Analytics</Link></li>
+            <li><Link scroll={false} href="/services/email-marketing">Email marketing</Link></li>
+            <li><Link scroll={false} href="/services/crm-integration">CRM integration</Link></li>
+            <li><Link scroll={false} href="/services/crm-integration">Search engine optimisation</Link></li>
           </ul>
         </div>
         <div className="w-full lg:w-2/12">
           <h2 className="text-xl font-sans mb-4 font-semibold">Connect</h2>
           <ul className="font-sans text-slate-600">
-            <li><Link href="/free-consultation">Free consultation</Link></li>
-            <li><Link href="/contact-us">Contact us</Link></li>
+            <li><Link scroll={false} href="/free-consultation">Free consultation</Link></li>
+            <li><Link scroll={false} href="/contact-us">Contact us</Link></li>
           </ul>
         </div>
       </div>
