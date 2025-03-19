@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: "Affordable web development in the heart of Ramsbottom - Ramsbottom Online",
   description: "Web development services by Jared Rigby - a Ramsbottom based web programmer.",
   openGraph: {
-    images: ['/peel-monument-styled.png']
+    images: ['https://www.ramsbottom.online/peel-monument-styled.png']
   }
 };
 
