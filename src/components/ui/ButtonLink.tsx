@@ -20,7 +20,7 @@ const ButtonLink: FC<ButtonLinkProps> = ({ href, text, colour }) => {
   }
 
   return (
-    <Link scroll={false} className={buttonClasses} href={href}>{text}</Link>
+    <Link className={buttonClasses} href={href}>{text}</Link>
   );
 };
 
