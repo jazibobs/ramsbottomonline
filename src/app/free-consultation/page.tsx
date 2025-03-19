@@ -1,17 +1,14 @@
-'use client'
-
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Cal, { getCalApi } from "@calcom/embed-react";
-import { useEffect } from "react";
+import ConsultationForm from "@/components/ConsultationForm";
+
+export const metadata: Metadata = {
+  title: "Free consultations - Ramsbottom Online",
+  description: "Arrange a free 30 minute consultation to discuss your business needs.",
+};
 
 export default function Consultation() {
-	useEffect(()=>{
-	  (async function () {
-		const cal = await getCalApi({"namespace":"30min"});
-		cal("ui", {"theme":"light","hideEventTypeDetails":false,"layout":"month_view"});
-	  })();
-	}, [])
 	return (
     <>
       <Header 
@@ -19,13 +16,7 @@ export default function Consultation() {
         subHeading="For a no obligation 30-minute chat about your website. Book an appointment using the form below."
         hideButton={true}
       />
-      <div className="p-8 pt-16">
-        <Cal namespace="30min"
-          calLink="gameful/30min"
-          style={{width:"100%",height:"100%",overflow:"scroll"}}
-          config={{"layout":"month_view"}}
-        />
-      </div>
+      <ConsultationForm />
       <Footer />
     </>
   

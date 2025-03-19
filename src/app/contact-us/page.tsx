@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import Footer from "@/components/Footer"
 import Header from "@/components/Header"
 import Image from "next/image"
 import Link from "next/link"
 import ServiceCta from "@/components/cta/ServiceCta"
+
+export const metadata: Metadata = {
+  title: "Get in touch - Ramsbottom Online",
+  description: "Contact us to discuss your web design and development needs.",
+};
 
 export default function ContactPage() {
   return (
@@ -30,7 +36,7 @@ export default function ContactPage() {
           </ul>
         </div>
         <div className="w-full lg:w-1/2">
-          <iframe className="rounded-lg" width="464" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.341074943542481%2C53.6346387759476%2C-2.3095750808715825%2C53.650196067286245&amp;layer=mapnik&amp;marker=53.642418138925244%2C-2.3253250122070312"></iframe>
+          <iframe className="rounded-lg max-w-full" width="464" height="350" src="https://www.openstreetmap.org/export/embed.html?bbox=-2.341074943542481%2C53.6346387759476%2C-2.3095750808715825%2C53.650196067286245&amp;layer=mapnik&amp;marker=53.642418138925244%2C-2.3253250122070312"></iframe>
         </div>
       </div>
       <ServiceCta/>

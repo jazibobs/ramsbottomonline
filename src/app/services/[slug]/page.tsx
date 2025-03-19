@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getServiceData, getServiceSlugs } from '@/lib/markdown'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -9,6 +10,16 @@ import AddOns from '@/components/AddOns';
 export async function generateStaticParams() {
   const paths = getServiceSlugs()
   return paths
+}
+
+// Function to generate metadata dynamically
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const { slug } = params
+  const service = await getServiceData(slug)
+  return {
+    title: service.title + " - Ramsbottom Online",
+    description: service.description,
+  }
 }
 
 // The page component

@@ -1,6 +1,6 @@
 ---
 title: Analytics
-description: Get your business ready to start selling online.
+description: Measure what's working for your business.
 ---
 
 ## Actionable user insights
