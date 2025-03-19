@@ -11,6 +11,9 @@ const dmSerif = DM_Serif_Display({
 export const metadata: Metadata = {
   title: "Affordable web development in the heart of Ramsbottom - Ramsbottom Online",
   description: "Web development services by Jared Rigby - a Ramsbottom based web programmer.",
+  openGraph: {
+    images: ['/peel-monument-styled.png']
+  }
 };
 
 export default function RootLayout({
