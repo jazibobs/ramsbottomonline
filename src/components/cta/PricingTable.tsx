@@ -20,7 +20,7 @@ export default function PricingTable() {
         </div>
         <div className="p-4 text-center absolute bottom-0 left-0 w-full flex flex-col gap-4">
           <ButtonLink text="Learn more" href="/services/landing-pages" colour="secondary" />
-          <ButtonLink text="Arrange a free consultation" href="Free Consultation" />
+          <ButtonLink text="Arrange a free consultation" href="/free-consultation" />
         </div>
       </div>
       <div className="w-full lg:w-1/4 bg-white shadow-xl rounded-lg overflow-hidden relative">
@@ -38,7 +38,7 @@ export default function PricingTable() {
         </div>
         <div className="p-4 text-center absolute bottom-0 left-0 w-full flex flex-col gap-4">
           <ButtonLink text="Learn more" href="/services/static-generated-websites" colour="secondary" />
-          <ButtonLink text="Arrange a free consultation" href="Free Consultation" />
+          <ButtonLink text="Arrange a free consultation" href="/free-consultation" />
         </div>
       </div>
       <div className="w-full lg:w-1/4 bg-white shadow-xl rounded-lg overflow-hidden relative">
@@ -55,7 +55,7 @@ export default function PricingTable() {
         </div>
         <div className="p-4 text-center absolute bottom-0 left-0 w-full flex flex-col gap-4">
           <ButtonLink text="Learn more" href="/services/wordpress" colour="secondary" />
-          <ButtonLink text="Arrange a free consultation" href="Free Consultation" />
+          <ButtonLink text="Arrange a free consultation" href="/free-consultation" />
         </div>
       </div>
       <div className="w-full lg:w-1/4 bg-white shadow-xl rounded-lg overflow-hidden relative">
@@ -72,7 +72,7 @@ export default function PricingTable() {
         </div>
         <div className="p-4 text-center absolute bottom-0 left-0 w-full flex flex-col gap-4">
           <ButtonLink text="Learn more" href="/services/ecommerce" colour="secondary" />
-          <ButtonLink text="Arrange a free consultation" href="Free Consultation" />
+          <ButtonLink text="Arrange a free consultation" href="/free-consultation" />
         </div>
       </div>
     </div>
