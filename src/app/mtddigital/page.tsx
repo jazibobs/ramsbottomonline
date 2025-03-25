@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ServiceCta from "@/components/cta/ServiceCta";
-import Link from "next/link";
 import Image from "next/image";
 import Services from "@/components/Services";
 
