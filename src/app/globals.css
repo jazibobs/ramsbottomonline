@@ -15,12 +15,12 @@ body {
 
 .site-header {
   background-size: cover, cover;
-  background-image: url(/peel-monument-styled.png), url(/bg/header.svg);
+  background-image: url(/peel-monument-styled.webp), url(/bg/header.svg);
   background-position: center bottom, center bottom;
 }
 
 .vase-hero {
-  background-image: url(/tilted-vase-styled.png);
+  background-image: url(/tilted-vase-styled.webp);
   background-position: left center;
   background-repeat: no-repeat;
   background-size: 50% auto;
