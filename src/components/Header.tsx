@@ -2,6 +2,7 @@
 
 import { FC, useState } from "react";
 import Link from "next/link";
+import Head from 'next/head';
 import SiteTitle from "./SiteTitle";
 import ButtonLink from "./ui/ButtonLink";
 
@@ -26,6 +27,9 @@ const Header: FC<HeaderProps> = ({ heading, subHeading, bgClass, hideButton }) =
 
   return (
     <header className={headingClasses}>
+      <Head>
+        <link rel="preload" as="image" href="peel-monument-styled.webp" />
+      </Head>
       <div className="bg-gradient-to-r from-gray-100/95 via-slate-200/95 to-slate-200/50">
         <div className="max-w-screen-xl m-auto p-8 flex gap-8 items-center justify-between">
           <SiteTitle />
