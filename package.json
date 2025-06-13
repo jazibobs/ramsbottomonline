@@ -12,7 +12,7 @@
     "@calcom/embed-react": "^1.5.2",
     "@tailwindcss/typography": "^0.5.16",
     "gray-matter": "^4.0.3",
-    "next": "15.1.6",
+    "next": "15.2.4",
     "next-plausible": "^3.12.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
